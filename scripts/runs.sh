@@ -6,13 +6,13 @@ accelerate launch --mixed_precision="fp16"  code/train_text_to_image.py \
   --dataset_name=$DATASET_NAME \
   --use_ema \
   --resolution=512 --center_crop --random_flip \
-  --train_batch_size=1 \
+  --checkpointing_steps=2000 \
+  --num_train_epochs=150 \
+  --train_batch_size=48 \
   --gradient_accumulation_steps=1 \
-  --gradient_checkpointing \
-  --checkpointing_steps=3000 \
-  --max_train_steps=15000 \
-  --learning_rate=1e-05 \
+  --learning_rate=1e-04 \
   --max_grad_norm=1 \
   --lr_scheduler="constant" --lr_warmup_steps=0 \
-  --output_dir="output/sd-naruto-model" 
-  # --report_to wandb
+  --output_dir="output/sd-naruto-model" \
+  --dataloader_num_workers=8 \
+  --report_to wandb

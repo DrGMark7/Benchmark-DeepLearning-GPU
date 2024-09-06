@@ -871,7 +871,9 @@ def main():
     vae.to(accelerator.device, dtype=weight_dtype)
 
     # We need to recalculate our total training steps as the size of the training dataloader may have changed.
-    num_update_steps_per_epoch = math.ceil(len(train_dataloader) / args.gradient_accumulation_steps)
+    num_update_steps_per_epoch = math.ceil(len(train_dataloader) / args.gradient_accumulation_steps)  #. Number of Data / Graidient Accumulation Steps
+    print(f"num_update_steps_per_epoch: {num_update_steps_per_epoch}")
+    print(f"args.gradint acc step: {args.gradient_accumulation_steps}")
     if args.max_train_steps is None:
         args.max_train_steps = args.num_train_epochs * num_update_steps_per_epoch
         if num_training_steps_for_scheduler != args.max_train_steps * accelerator.num_processes:
@@ -881,6 +883,7 @@ def main():
                 f"This inconsistency may result in the learning rate scheduler not functioning properly."
             )
     # Afterwards we recalculate our number of training epochs
+    print(f"max_train_steps: {args.max_train_steps}")
     args.num_train_epochs = math.ceil(args.max_train_steps / num_update_steps_per_epoch)
 
     # We need to initialize the trackers we use, and also store our configuration.
