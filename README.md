@@ -1,7 +1,7 @@
 ### Benchmark Text-to-Image Training
 
 Model for Experiment
-- Stable Diffusion Version 1-4
+- Stable Diffusion Version 1.4
 
 ### Hardware for Experiment
 
@@ -27,6 +27,8 @@ Token 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
 build diffusers from source
 [https://huggingface.co/docs/diffusers/installation#install-from-source]
 
+Use training Scripts from Diffusers/huggingface
+- Normal Training 
 
 SetUp accelerate config By self 
 
