@@ -1,3 +1,5 @@
 data/
 model/
 annotations/
+wandb/
+output/
