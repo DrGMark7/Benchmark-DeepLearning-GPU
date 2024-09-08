@@ -29,7 +29,6 @@ import numpy as np
 import torch
 import torch.nn.functional as F
 import torch.utils.checkpoint
-import torch_tensorrt
 import transformers
 from accelerate import Accelerator
 from accelerate.logging import get_logger
