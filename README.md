@@ -22,7 +22,10 @@ Model for Experiment
 - Train Diffusion model on DGX 2 Node : Nvidia A100 80GB x1 [MIG Device]
     - Nvidia Mellanox ConnectX-6 HPC-Network [200Gbps]
 
-Token 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
+Token 
+```
+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
+```
 
 build diffusers from source
 [https://huggingface.co/docs/diffusers/installation#install-from-source]
