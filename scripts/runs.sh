@@ -1,7 +1,7 @@
 export MODEL_NAME="CompVis/stable-diffusion-v1-4"
 export DATASET_NAME="lambdalabs/naruto-blip-captions"
 
-accelerate launch --mixed_precision="fp16"  code/train_text_to_image.py \
+accelerate launch --mixed_precision="fp16"  ../code/train_text_to_image.py \
   --pretrained_model_name_or_path=$MODEL_NAME \
   --dataset_name=$DATASET_NAME \
   --use_ema \
@@ -15,4 +15,4 @@ accelerate launch --mixed_precision="fp16"  code/train_text_to_image.py \
   --lr_scheduler="constant" --lr_warmup_steps=0 \
   --output_dir="output/sd-naruto-model" \
   --dataloader_num_workers=8 \
-  --report_to wandb
+  # -report_to wandb
